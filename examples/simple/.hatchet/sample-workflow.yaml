@@ -1,0 +1,25 @@
+name: 'Post User Sign Up'
+on:
+  events: 
+    - user:create
+jobs:
+  print-user:
+    steps:
+    - name: Echo 1
+      id: echo1
+      actionId: echo:echo
+      timeout: 60s
+      with:
+        message: "Username is {{ .username }}"
+    - name: Echo 2
+      id: echo2
+      actionId: echo:echo
+      timeout: 60s
+      with:
+        message: "Above message is: {{ .steps.echo1.outputs.message }}"
+    - name: Echo 3
+      id: echo3
+      actionId: echo:echo
+      timeout: 60s
+      with:
+        message: "Above message is: {{ .steps.echo2.outputs.message }}"

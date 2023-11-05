@@ -1,0 +1,28 @@
+name: 'Post User Sign Up'
+on:
+  events: 
+    - user:create
+jobs:
+  create-slack-notifs:
+    steps:
+    - name: Create onboarding channel
+      actionId: slack:create-channel
+      id: createChannel
+      timeout: 60s
+      with:
+        channelName: "{{ .username }}-onboarding"
+    - name: Add user to channel
+      actionId: slack:add-users-to-channel
+      id: addUserToChannel
+      timeout: 60s
+      with:
+        channelId: "{{ .steps.createChannel.outputs.channelId }}"
+        userIds: 
+        - "$SLACK_USER_ID"
+    - name: Send message to channel
+      actionId: slack:send-message
+      id: sendMessageToChannel
+      timeout: 60s
+      with:
+        channelId: "{{ .steps.createChannel.outputs.channelId }}"
+        message: "Welcome to your dedicated onboarding channel, {{ .username }}!"

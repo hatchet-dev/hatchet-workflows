@@ -1,0 +1,15 @@
+version: "3"
+
+tasks:
+  write-default-env:
+    cmds:
+      - echo '[hatchet] Setting default environment variables'
+      - sh ./hack/dev/write-default-env.sh
+  generate-certs:
+    cmds:
+      - echo '[hatchet] Generating dev certificates for Hatchet server'
+      - sh ./hack/dev/generate-temporal-certs.sh ./hack/dev/certs
+  start-temporal-server:
+    cmds:
+      - echo '[hatchet] Starting Temporal server'
+      - sh ./hack/dev/start-temporal-server.sh
