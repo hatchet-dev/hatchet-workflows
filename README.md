@@ -58,12 +58,9 @@ Ultimately, the goal of Hatchet workflows are that you don't need to write these
   - Stripe
   - AWS S3
 - Additionally, if you're already familiar with/using Temporal, making workflows declarative provides several benefits:
-
   - Makes spec'ing, debugging and visualizing workflows much simpler
   - Automatically updates triggers, schedules, and timeouts when they change, rather than doing this through a UI/CLI/SDK
-  - Makes monitoring easier to build by logically separating units of work - jobs will automatically correspond to `BeginSpan
-
-  Provides a stronger framework for building monitoring. OpenTelemetry support is on the roadmap.
+  - Makes monitoring easier to build by logically separating units of work - jobs will automatically correspond to `BeginSpan`. OpenTelemetry support is on the roadmap.
 
 ## Getting Started
 
@@ -104,7 +101,7 @@ See the [Slack integration](./pkg/integrations/slack) for an example.
 
 ### Writing a Workflow
 
-By default, Hatchet searches for workflows in the `.hatchet` folder located at `./.hatchet` relative to the directory you run your application in. However, you can configure this using `worker.WithWorkflowFiles` and the exported `fileutils` package (`fileutils.ReadAllValidFilesInDir`).
+By default, Hatchet searches for workflows in the `.hatchet` folder relative to the directory you run your application in. However, you can configure this using `worker.WithWorkflowFiles` and the exported `fileutils` package (`fileutils.ReadAllValidFilesInDir`).
 
 There are two main sections of a workflow file:
 

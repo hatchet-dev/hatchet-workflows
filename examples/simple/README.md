@@ -1,4 +1,6 @@
-Runs workflow: [sample-workflow.yaml](./.hatchet/sample-workflow.yaml)
+## Simple Workflow Example
+
+This example runs the [sample-workflow.yaml](./.hatchet/sample-workflow.yaml).
 
 ## Explanation
 
