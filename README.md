@@ -1,3 +1,5 @@
+[![slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://join.slack.com/t/hatchet-co/signup) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 ## Introduction
 
 _**Note:** Hatchet workflows are in early development. Changes are not guaranteed to be backwards-compatible. If you'd like to run them in production, feel free to reach out on Slack for tips._
@@ -277,3 +279,7 @@ If you're familiar with Temporal, Hatchet utilizes Temporal as a backend for pro
 - Each step in a job corresponds to a Temporal activity
 
 Hatchet is compatible with both Temporal Cloud and self-hosted versions of Temporal.
+
+## I'd Like to Contribute
+
+Hatchet is still in very early development -- as a result, there are no development docs. However, please feel free to reach out on the #contributing channel on [Slack](https://join.slack.com/t/hatchet-co/signup) to shape the direction of the project.
